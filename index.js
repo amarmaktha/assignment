@@ -7,15 +7,15 @@ const app=express();
 app.use(express.json())
 const PORT = 5000;
 const users={
-    "amar":{
+    "abc":{
        
         "catalog" : [ "shampoo", "soap", "conditioner" ]
     },
-    "sahil":{
+    "pqr":{
        
         "catalog" : [ "pins", "hairclip", "furniture" ]
     },
-    "sid":{
+    "tuv":{
        
         "catalog" : [ "books", "pens", "toys" ]
     }
@@ -26,7 +26,7 @@ app.get('/',(req,res) => {
     res.send('hello! assignment on on_search and search');
 });
 
-
+// this endpoint id for search invoking on_search
 app.get('/search/:id',async function(req, res) {
     let query = req.params.id;
     console.log("vvvvvv",query);
@@ -49,11 +49,11 @@ app.get('/search/:id',async function(req, res) {
 
 
 
-
+// this endpoint id for on_search
 app.get('/on_search/:id',(req,res)=>{
 
     const user=req.params.id;
-    console.log (users[user]);
+   // console.log (users[user]);
     res.send(users[user].catalog);
 })
 
